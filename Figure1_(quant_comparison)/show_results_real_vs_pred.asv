@@ -1,0 +1,67 @@
+function show_results_real_vs_pred(pred_pu1_SS,pred_pu1_prod)
+
+% pred_pu1_SS is a 1by3 array (from left to right, B cell, pro low, pro
+% high)
+% pred_pu1_prod is a 1by 3 array
+
+SS_color = '#E03B3B';
+prod_color = [0.00 0.75 0.65];
+
+close all
+f = figure('Position',[100 100 800 600]);
+axis tight
+
+%%%% categrocial x
+cats = categorical({'B cell','pro low','pro high'},'Ordinal',true);
+% categories(cats) % debug
+desire_order = {'B cell','pro low','pro high'};
+desire_cats = reordercats(cats,desire_order);
+% categories(desire_cats) % debug
+
+%%%% plot predicted pu1 ss
+bar(cats,pred_pu1_SS,'FaceColor','none', 'EdgeColor',SS_color,'LineWidth',lw)
+hold on
+
+%%%% overlay predicted pu1 ss
+load(fullfile(fileparts(pwd), 'Error propagation and Normalization', 'error_prop.mat'));
+for ct = 1:3
+    curr_conc_range = conc_ratio_all(ct,:);
+    errorbar(endpoints_prod_rate(ct),curr_prod_rate_range(2), ...% x, y
+        curr_prod_rate_range(2)-curr_prod_rate_range(1),curr_prod_rate_range(3)-curr_prod_rate_range(2), ... % yneg, ypos
+        'LineWidth',lw,'Color',SS_color,'Marker','o','MarkerEdgeColor','none','MarkerFaceColor',SS_color,'MarkerSize',ms);
+    hold on
+end
+legend('Model-predicted \it{[pu]}','Model-predicted \it[pu]\rm production rate','Data-constrained PU.1-GFP','Data-constrained PU.1 synthesis rate', ...
+    'Location','northwest')
+
+f = figure('Position',[100 100 800 600]);
+axis tight
+
+%%%% plot predicted pu1 prod
+bar(cats,pred_pu1_prod,'FaceColor','none', 'EdgeColor',prod_color,'LineWidth',lw)
+hold on
+
+%%%% overlay predicted pu1 prod
+for ct = 1:3
+    curr_prod_rate_range = prodRate_ratio_all(ct,:);
+    errorbar(endpoints_prod_rate(ct),curr_prod_rate_range(2), ...% x, y
+        curr_prod_rate_range(2)-curr_prod_rate_range(1),curr_prod_rate_range(3)-curr_prod_rate_range(2), ... % yneg, ypos
+        'LineWidth',lw,'Color',prod_color,'Marker','o','MarkerEdgeColor','none','MarkerFaceColor',prod_color,'MarkerSize',ms);
+    hold on
+end
+
+legend('Model-predicted \it{[pu]}','Model-predicted \it[pu]\rm production rate','Data-constrained PU.1-GFP','Data-constrained PU.1 synthesis rate','Data-constrained PU.1 removal rate', ...
+    'Location','northwest')
+% legend('Model Prediction','','','','Experimental Measurement','location','northwest')
+set(gca,'FontSize',fs)
+
+%%%% save file name
+if contains(mat_name, "failed")
+    % Extract the 5th-to-last character
+    ch = extractBetween(mat_name, strlength(mat_name)-5, strlength(mat_name)-4);
+else
+    ch = "";
+end
+tok = regexp(mat_name, '\(([^)]*)\)', 'tokens');
+model_name = tok{3}{1};
+exportgraphics(f,strcat(model_name,ch," ",'summary v3.tif'),'Resolution',300);
