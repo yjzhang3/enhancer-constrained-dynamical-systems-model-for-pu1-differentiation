@@ -1,0 +1,10 @@
+function out = AllMATCONTFuncHandle
+out{1} = @init;
+out{2} = @ODE_func_cellType_forMATCONT; % function handle for the specific ODE (just pu14, pu1412, pu141210cebp14)
+out{3} = []; % add analytical jacobian if have time
+out{4} = [];
+out{5} = [];
+out{6} = [];
+out{7} = [];
+out{8} = [];
+out{9} = [];

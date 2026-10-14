@@ -1,0 +1,88 @@
+
+--------------------------------------------------------------------------------
+                Assertion detected at 2026-07-06 14:57:52 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : UTF-8
+  Deployed                 : false
+  GNU C Library            : 2.34 stable
+  Graphics Driver          : Uninitialized software 
+  Graphics card 1          : 0x102b ( 0x102b ) 0x538 Version 0.0.0.0 (0-0-0)
+  Java Version             : Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+  MATLAB Architecture      : glnxa64
+  MATLAB Entitlement ID    : 4134167
+  MATLAB Root              : /opt/apps/software/MATLAB/2024b
+  MATLAB Version           : 24.2.0.3070828 (R2024b) Update 7
+  OpenGL                   : software
+  Operating System         : Linux 5.14.0-427.13.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Apr 10 10:29:16 EDT 2024 x86_64
+  Process ID               : 918191
+  Processor ID             : x86 Family 6 Model 143 Stepping 8, GenuineIntel
+  Session Key              : 9819fb94-c19c-4da1-84b7-e8053368abd8
+  Window System            : No active display
+
+Fault Count: 1
+
+
+Assertion in static void MathWorks::utl::alloc::AllocatorFixture<A>::Deallocate(void*) [with MathWorks::utl::alloc::AllocArea A = MathWorks::utl::alloc::AllocArea::ARENA] at alloc/Allocator.cpp line 551:
+Unexpected exception in AllocaterFixture::Deallocate
+
+Current Thread: 'GTP_2' id 140083474966080
+
+Register State (captured):
+  RAX = 0000000000000000  RBX = 00007f68529d13c8
+  RCX = 0000000000000000  RDX = 00007f68529baec8
+  RSP = 00007f67b9c38330  RBP = 00007f67b9c38710
+  RSI = 00007f685299fff5  RDI = 00007f67b9c38340
+
+   R8 = 0000000000000001   R9 = 00007f67b9c38620
+  R10 = 0000000000000000  R11 = 0000000000000000
+  R12 = 00007f685299fff5  R13 = 00007f67b9c38780
+  R14 = 00007f67b9c38be0  R15 = 00007f684004b6a0
+
+  RIP = 00007f6852949c2f  EFL = 0000000000000000
+
+   CS = 0000   FS = 0000   GS = 0000
+
+Stack Trace (captured):
+[  0] 0x00007f68529436c3 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwfl.so+00321219
+[  1] 0x00007f685294390c /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwfl.so+00321804 _ZN10foundation4core4diag15stacktrace_base7captureEm+00000028
+[  2] 0x00007f68529457ca /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwfl.so+00329674
+[  3] 0x00007f68529463e2 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwfl.so+00332770
+[  4] 0x00007f6852946467 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwfl.so+00332903
+[  5] 0x00007f68400454b4 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwlxeutilities.so+00218292
+[  6] 0x00007f6840041f65 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwlxeutilities.so+00204645 _ZN9MathWorks3utl10fast_arena5clearEv+00000229
+[  7] 0x00007f6840041fb3 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwlxeutilities.so+00204723 _ZN9MathWorks3utl10fast_arenaD1Ev+00000035
+[  8] 0x00007f6840042021 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwlxeutilities.so+00204833 _ZN9MathWorks3utl10fast_arenaD0Ev+00000017
+[  9] 0x00007f684041a462 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwir.so+00177250 _ZN2ir6IrTreeD1Ev+00000834
+[ 10] 0x00007f684041a4e1 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwir.so+00177377 _ZN2ir6IrTreeD0Ev+00000017
+[ 11] 0x00007f682c4e2b65 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwm_lxe.so+05753701 _ZN9MathWorks3lxe16MatlabIrTreeListD1Ev+00000197
+[ 12] 0x00007f682c4e2d41 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwm_lxe.so+05754177 _ZN9MathWorks3lxe16MatlabIrTreeListD0Ev+00000017
+[ 13] 0x00007f682ca996ae /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwm_lxe.so+11744942
+[ 14] 0x00007f682caa6e95 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwm_lxe.so+11800213
+[ 15] 0x00007f684f76bf27 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmx.so+01031975
+[ 16] 0x00007f684f76b3f8 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmx.so+01029112
+[ 17] 0x00007f684f76c2a1 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmx.so+01032865
+[ 18] 0x00007f684f76b7c6 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmx.so+01030086 _ZN6matrix12destroyArrayEP11mxArray_tag+00000070
+[ 19] 0x00007f6849544f46 /opt/apps/software/MATLAB/2024b/bin/glnxa64/builtins/login/builtins/../../../../../bin/glnxa64/libmwloginbuiltins.so+00376646
+[ 20] 0x0000000000414897 /opt/apps/software/MATLAB/2024b/bin/glnxa64/MATLAB+00084119 _ZNSt14_Function_baseD2Ev+00000023
+[ 21] 0x00007f67b00e3eb3 /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/clients/login/spf/matlabloginclient/libmwmatlabloginclient.so+00282291
+[ 22] 0x00007f683445e704 /opt/apps/software/MATLAB/2024b/bin/glnxa64/libmwagentspfcore.so+00141060 _ZN5agent3spf4core16ExportedCallbackD1Ev+00000244
+[ 23] 0x000000000041252a /opt/apps/software/MATLAB/2024b/bin/glnxa64/MATLAB+00075050 _ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_releaseEv+00000090
+[ 24] 0x00007f67dc0433cb /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/libmwagentspflegacyservicepublisher.so+00189387
+[ 25] 0x00007f67ba3e957b /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/../../../../../../../bin/glnxa64/libmwagentnanomsgtransport.so+00263547
+[ 26] 0x00007f67ba3cd95f /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/../../../../../../../bin/glnxa64/libmwagentnanomsgtransport.so+00149855
+[ 27] 0x00007f67ba3d0def /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/../../../../../../../bin/glnxa64/libmwagentnanomsgtransport.so+00163311
+[ 28] 0x00007f67ba3d2730 /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/../../../../../../../bin/glnxa64/libmwagentnanomsgtransport.so+00169776
+[ 29] 0x00007f67dc0541dd /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/libmwagentspflegacyservicepublisher.so+00258525
+[ 30] 0x00007f67dc060b29 /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/libmwagentspflegacyservicepublisher.so+00310057
+[ 31] 0x00007f67dc061a04 /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/libmwagentspflegacyservicepublisher.so+00313860
+[ 32] 0x00007f67dc06283c /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/libmwagentspflegacyservicepublisher.so+00317500
+[ 33] 0x00007f67dc06335c /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/libmwagentspflegacyservicepublisher.so+00320348
+[ 34] 0x00007f67dc063fbb /opt/apps/software/MATLAB/2024b/bin/glnxa64/spf/servicepublishers/agent/spf/legacyservicepublisher/libmwagentspflegacyservicepublisher.so+00323515
+[ 35] 0x00007f685160b8c3 /opt/apps/software/MATLAB/2024b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00903363
+[ 36] 0x00007f6851289c02                                   /lib64/libc.so.6+00564226
+[ 37] 0x00007f685130ec40                                   /lib64/libc.so.6+01109056
+
