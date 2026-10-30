@@ -1,5 +1,8 @@
 # "Integrating cell-state and enhancer constraints discriminates models of PU.1 regulation during hematopoietic differentiation"
-Model and figure generating scripts for the pre-print publication. The README is structured as follows:
+
+Requirement: MATLAB R2021a or later, with the Optimization Toolbox, the Statistics and Machine Learning Toolbox, and the Symbolic Math Toolbox.
+
+This README includes model and figure generating scripts for the pre-print publication, and is structured as follows:
 ### folderName
 1. whichFigureTheScriptIsFor: MATLAB/FILE/TO/RUN
 2. anotherFigure: ANOTHER/MATLAB/FILE/TO/RUN
