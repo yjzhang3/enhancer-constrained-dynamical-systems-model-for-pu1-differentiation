@@ -22,4 +22,4 @@ for ct = 1:3
     remRate_constant_ratio_all_CEBPA(ct,[1,3]) = ratio_CI_rate;
 end
 
-save('error_prop_0216.mat','remRate_constant_ratio_all_CEBPA','-append')
+save('error_prop.mat','remRate_constant_ratio_all_CEBPA','-append')
