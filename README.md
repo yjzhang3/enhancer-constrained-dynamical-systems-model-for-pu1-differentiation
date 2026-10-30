@@ -30,9 +30,9 @@ Model and figure generating scripts for the pre-print publication. The README is
 
 
 ## Error_propagation_and_normalization
-1. two-dimensional uncertainty in joint measurements of PU.1 abundance and synthesis rate after being normalized to macrophage: Error_propagation_and_normalization/error_prop_concAndProdRate.m
+1. two-dimensional uncertainty in joint measurements of PU.1 abundance and synthesis rate after being normalized to macrophage: Error_propagation_and_Normalization/error_prop_concAndProdRate.m
 2. uncertainty in PU.1 dilution rate converted from cell cycle length after being normalized to macrophage: Error_propagation_and_normalization/error_prop_growthRate.m
-3. uncertainty in C/EBPa dilution rate converted from cell cycle length after being normalized to macrophage: Error_propagation_and_normalization/error_prop_RemRate_CEBPA.m
+3. uncertainty in C/EBPa dilution rate converted from cell cycle length after being normalized to macrophage: Error_propagation_and_Normalization/error_prop_RemRate_CEBPA.m
 
 *Note: for reproducibility, all results in the main text are developed using the results saved in "error_prop_0216.mat"*
 	  
