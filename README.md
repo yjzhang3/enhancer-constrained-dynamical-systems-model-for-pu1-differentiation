@@ -9,7 +9,7 @@ Model and figure generating scripts for the pre-print publication. The README is
 1. Figure 1B and 1C: Figure1_(quant_comparison)/Fig4_replicate_dimensionless.m
 
 ## Figure1_(cell_cycle_contradiction)
-2. Figure 1D: Figure1_(quant_comparison)/Plot_cellcycle_length_KuehModel_vs_Real_v3.m
+2. Figure 1D: Figure1_(cell_cycle_contradiction)/Plot_cellcycle_length_KuehModel_vs_Real_v3.m
 
 ## Figure23_(phen_results)
 1. Figure 2BCD and Figure S1: Figure2(PU1_alone_no data_use_ps)/PU1_alone_Hill_use_ps.m
