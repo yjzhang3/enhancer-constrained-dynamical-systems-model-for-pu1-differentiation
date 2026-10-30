@@ -17,6 +17,7 @@ Model and figure generating scripts for the pre-print publication. The README is
 3. Figure 3E: Figure3(PU1+CE+feedback+CEdilution)/PU1_CEBPa_Hill_noData_wFeedback_ps_to_find_sol_v2.m
 
 ## Figure45_(biophy_results)
+All paths below are relative to "Figure45_(biophy_results)/”
 1. Figure 4CD: cebpa_wPCfeedback_noAUTOfeedback_extraPenal(model1)/ODE_Local_Post_Analysis.m
 2. Figure 4EF, Figure S3BCD, and Figure S4BC: debug_why_cebpa_fails/analyze_nofeedback_results.m
 3. Figure S5BC: cerun_wPCfeedback_noAUTOfeedback_extraPenal(model3)/ODE_Local_Post_Analysis.m
