@@ -1,6 +1,19 @@
 # "Integrating cell-state and enhancer constraints discriminates models of PU.1 regulation during hematopoietic differentiation"
 
-Requirement: MATLAB R2021a or later, with the Optimization Toolbox, the Statistics and Machine Learning Toolbox, and the Symbolic Math Toolbox.
+### Setup notes (for users and automated/AI-assisted runs)
+
+**Path length:** The default folder names are long. On Windows, extraction or MATLAB
+can fail with "path too long" errors. Extract into a short top-level folder instead:
+
+- Windows (PowerShell): `Expand-Archive -Path <downloaded>.zip -DestinationPath C:\pu1`
+- macOS/Linux: `unzip <downloaded>.zip -d ~/pu1`
+
+Then, if needed, rename the extracted top-level folder to a short name (e.g., `pu1`).
+Do not rename any subfolders or files; scripts load data by relative path.
+
+**How to run each script:** In MATLAB, `cd` into the folder that contains the script,
+then run it by name. All scripts assume the current folder is their own folder.
+Example: `cd('Figure1_(quant_comparison)'); Fig4_replicate_dimensionless`
 
 This README includes model and figure generating scripts for the pre-print publication, and is structured as follows:
 ### folderName
@@ -8,18 +21,18 @@ This README includes model and figure generating scripts for the pre-print publi
 2. anotherFigure: ANOTHER/MATLAB/FILE/TO/RUN
 
 ---
-## Figure1_(quant_comparison)
+### Figure1_(quant_comparison)
 1. Figure 1B and 1C: Fig4_replicate_dimensionless.m
 
-## Figure1_(cell_cycle_contradiction)
+### Figure1_(cell_cycle_contradiction)
 2. Figure 1D: Plot_cellcycle_length_KuehModel_vs_Real_v3.m
 
-## Figure23_(phen_results)
+### Figure23_(phen_results)
 1. Figure 2BCD and Figure S1: Figure2(PU1_alone_no data_use_ps)/PU1_alone_Hill_use_ps.m
 2. Figure 3BC: Figure3(PU1+CE+nofeedback_X=const)/PU1_CEBPa_Hill_noData_ps_to_find_sol_ODE_Xconst.m
 3. Figure 3E: Figure3(PU1+CE+feedback+CEdilution)/PU1_CEBPa_Hill_noData_wFeedback_ps_to_find_sol_v2.m
 
-## Figure45_(biophy_results)
+### Figure45_(biophy_results)
 1. Figure 4CD: cebpa_wPCfeedback_noAUTOfeedback_extraPenal(model1)/ODE_Local_Post_Analysis.m
 2. Figure 4EF, Figure S3BCD, and Figure S4BC: debug_why_cebpa_fails/analyze_nofeedback_results.m
 3. Figure S5BC: cerun_wPCfeedback_noAUTOfeedback_extraPenal(model3)/ODE_Local_Post_Analysis.m
@@ -32,7 +45,7 @@ This README includes model and figure generating scripts for the pre-print publi
 *Note: best parameters of the "C/EBPa model" in main text are found through bifurcation analysis. Due to the enormous size of code packages needed for MATCONT, we excluded these files during upload. For any interest in re-running the bifurcation analyses in folder "BifurcationAnalysisofModel3_noMATCONT_files", simply copy and paste MATCONT packages into the folder.* 
 
 
-## Error_propagation_and_normalization
+### Error_propagation_and_normalization
 1. two-dimensional uncertainty in joint measurements of PU.1 abundance and synthesis rate after being normalized to macrophage: Error_propagation_and_Normalization/error_prop_concAndProdRate.m
 2. uncertainty in PU.1 dilution rate converted from cell cycle length after being normalized to macrophage: Error_propagation_and_normalization/error_prop_growthRate.m
 3. uncertainty in C/EBPa dilution rate converted from cell cycle length after being normalized to macrophage: Error_propagation_and_Normalization/error_prop_RemRate_CEBPA.m
