@@ -6,10 +6,10 @@ Model and figure generating scripts for the pre-print publication. The README is
 
 ---
 ## Figure1_(quant_comparison)
-1. Figure 1B and 1C: Figure1_(quant_comparison)/Fig4_replicate_dimensionless.m
+1. Figure 1B and 1C: Fig4_replicate_dimensionless.m
 
 ## Figure1_(cell_cycle_contradiction)
-2. Figure 1D: Figure1_(cell_cycle_contradiction)/Plot_cellcycle_length_KuehModel_vs_Real_v3.m
+2. Figure 1D: Plot_cellcycle_length_KuehModel_vs_Real_v3.m
 
 ## Figure23_(phen_results)
 1. Figure 2BCD and Figure S1: Figure2(PU1_alone_no data_use_ps)/PU1_alone_Hill_use_ps.m
@@ -17,7 +17,6 @@ Model and figure generating scripts for the pre-print publication. The README is
 3. Figure 3E: Figure3(PU1+CE+feedback+CEdilution)/PU1_CEBPa_Hill_noData_wFeedback_ps_to_find_sol_v2.m
 
 ## Figure45_(biophy_results)
-All paths below are relative to "Figure45_(biophy_results)/”
 1. Figure 4CD: cebpa_wPCfeedback_noAUTOfeedback_extraPenal(model1)/ODE_Local_Post_Analysis.m
 2. Figure 4EF, Figure S3BCD, and Figure S4BC: debug_why_cebpa_fails/analyze_nofeedback_results.m
 3. Figure S5BC: cerun_wPCfeedback_noAUTOfeedback_extraPenal(model3)/ODE_Local_Post_Analysis.m
